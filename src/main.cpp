@@ -5,10 +5,6 @@
 #include "Math.hpp"
 #include "Structs.hpp"
 using namespace std;
-std::ostream& operator<<(std::ostream& os, const mat4& a) {
-    os <<a.m11<<" "<<a.m12<<" "<<a.m13<<" "<<a.m14<<"\n"<<a.m21<<" "<<a.m22<<" "<<a.m23<<" "<<a.m24<<"\n"<<a.m31<<" "<<a.m32<<" "<<a.m33<<" "<<a.m34<<"\n"<<a.m41<<" "<<a.m42<<" "<<a.m43<<" "<<a.m44<<"\n";
-    return os;
-}
 float mdx, mdy;
 float yaw=0, pitch=0;
 vec3 campos = {0, 0, 0};
@@ -420,7 +416,6 @@ int main(int argc, char* argv[]){
 
 		SDL_SubmitGPUCommandBuffer(cmdbuf);
 	}
-	for(int i = 0; i < 26; i++) std::cout<<instances[i].id<<"\n";
 	SDL_ReleaseGPUGraphicsPipeline(gpu, pipeline);
 	SDL_ReleaseGPUBuffer(gpu, VertexBuffer);
 	SDL_ReleaseGPUBuffer(gpu, InstanceBuffer);
